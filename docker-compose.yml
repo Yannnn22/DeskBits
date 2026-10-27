@@ -1,0 +1,20 @@
+name: deskbits
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: deskbits-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:16379:6379"
+    volumes:
+      - deskbits-redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  deskbits-redis-data:

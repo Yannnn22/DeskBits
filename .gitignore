@@ -1,0 +1,47 @@
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.iml
+
+# JavaScript / Electron
+node_modules/
+dist/
+dist-ssr/
+build/
+*.local
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local runtime data
+.desktopmate/
+.worktrees/
+.parts/
+.pnpm-store/
+.uv-cache/
+.superpowers/
+logs/
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Generated app artifacts
+apps/desktop-shell/build/

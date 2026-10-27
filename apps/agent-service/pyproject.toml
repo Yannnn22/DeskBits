@@ -1,0 +1,51 @@
+[project]
+name = "desktopmate-agent-service"
+version = "0.1.0"
+description = "Python Agent service for DesktopMate"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "fastapi>=0.111,<0.116",
+  "uvicorn[standard]>=0.30,<0.35",
+  "pydantic>=2.7,<3",
+  "pydantic-settings>=2.3,<3",
+  "langgraph>=0.2,<0.3",
+  "langchain>=0.2,<0.3",
+  "langchain-openai>=0.1,<0.2",
+  "openai>=1.40,<2",
+  "pymilvus>=2.5,<3",
+  "python-dotenv>=1.0,<2",
+  "redis>=5,<6",
+  "python-multipart>=0.0.9,<1",
+  "cryptography>=42,<46",
+  "ddgs>=9,<11",
+  "pypdf>=4,<6",
+  "python-docx>=1.1,<2",
+  "python-pptx>=1.0,<2",
+  "faster-whisper>=1.0,<2",
+  "zhconv>=1.4.3",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.2,<9",
+  "pytest-asyncio>=0.23,<0.25",
+  "httpx>=0.27,<0.28",
+  "ruff>=0.5,<0.7"
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "smoke: main functional flows used to verify the backend without a desktop UI",
+  "integration: tests that require external services such as Docker Redis",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"

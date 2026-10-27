@@ -1,0 +1,28 @@
+{
+  "name": "deskbits-desktop-shell",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "productName": "DeskBits",
+  "description": "Electron and Vue desktop shell for DeskBits.",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:electron": "DESKTOPMATE_RENDERER_URL=http://127.0.0.1:5173 electron .",
+    "dev:electron:mac": "node scripts/start-mac.cjs --renderer-url=http://127.0.0.1:5173",
+    "build": "vue-tsc --noEmit && vite build",
+    "start": "electron .",
+    "start:mac": "node scripts/start-mac.cjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "electron": "^43.2.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.19",
+    "vue-tsc": "^2.2.12"
+  }
+}
