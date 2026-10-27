@@ -52,10 +52,11 @@ npm run dev:electron   # Electron
 One-command macOS launch (recommended):
 
 ```bash
+npm run build      # start:mac loads dist/index.html; build once after clone
 npm run start:mac
 ```
 
-`start:mac` uses LaunchServices to launch Electron and auto-starts the local Python Agent Service. The backend detection order is:
+`start:mac` uses LaunchServices to launch Electron and auto-starts the local Python Agent Service. For live development, use `npm run dev` + `npm run dev:electron`. The backend detection order is:
 
 1. `DESKTOPMATE_AGENT_SERVICE_DIR`
 2. `apps/agent-service`（优先使用其 `.venv/bin/python`）

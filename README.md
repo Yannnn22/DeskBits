@@ -133,12 +133,17 @@ cd ../agent-service
 uv sync
 ```
 
-### 3. 启动
+### 3. 构建并启动
+
+`start:mac` 加载的是 `dist/index.html`，首次 clone 后需要先构建一次：
 
 ```bash
 cd ../desktop-shell
+npm run build
 npm run start:mac
 ```
+
+如果要做前端热更新开发，改用 `npm run dev` + `npm run dev:electron`。
 
 `start:mac` 会：
 
